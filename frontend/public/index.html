@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express HTML Server</title>
+    <style>
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e1e24 0%, #15151c 100%);
+            color: #ffffff;
+        }
+        .container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello from Express!</h1>
+        <p>This HTML file is seamlessly served by your new Express app.</p>
+        <p>Backend Response: <%= data %></p>
+    </div>
+</body>
+</html>

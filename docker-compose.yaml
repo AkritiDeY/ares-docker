@@ -1,0 +1,33 @@
+version: '1.0'
+
+services:
+  backend:
+    build: backend
+    hostname: backend-host
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000" # Maps localhost:8000 to the container's 8000 port
+    networks:
+      - ares-networks
+
+  frontend:
+    build: frontend
+    hostname: frontend-host
+    volumes:
+      - ./frontend:/app
+    environment:
+      # If your frontend uses 'node-fetch', it runs server-side and needs the internal hostname:
+      - BACKEND_URL=http://backend-host:8000/api
+    ports:
+      - "3000:3000" # Expose the Node.js server to localhost:3000
+    links:
+      - backend
+    networks:
+      - ares-networks 
+    depends_on:
+      - backend
+
+networks:
+  ares-networks:
+    driver: bridge

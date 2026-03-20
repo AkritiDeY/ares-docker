@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ares Frontend View</title>
+    <style>
+        body { 
+            font-family: 'Inter', 'Segoe UI', sans-serif; 
+            padding: 2rem; 
+            background: #111827;
+            color: #f9fafb;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container { 
+            background: #1f2937; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            max-width: 800px;
+            width: 100%;
+            border: 1px solid #374151;
+        }
+        h1 {
+            color: #60a5fa;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 1rem;
+            margin-top: 0;
+        }
+        pre { 
+            background: #111827; 
+            color: #a78bfa; 
+            padding: 1.5rem; 
+            border-radius: 8px; 
+            overflow-x: auto; 
+            border: 1px solid #374151;
+            font-size: 0.95rem;
+        }
+        .success-text {
+            color: #34d399;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ares API Data</h1>
+        <p class="success-text">✓ Data successfully fetched from the backend api</p>
+        
+        <!-- We use JSON.stringify to display whatever data object the backend returned -->
+        <pre><%- JSON.stringify(locals, null, 2) %></pre>
+    </div>
+</body>
+</html>

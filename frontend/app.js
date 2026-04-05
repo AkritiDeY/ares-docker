@@ -4,7 +4,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-const URL = process.env.BACKEND_URL || 'http://localhost:8000/api';
+const URL = process.env.BACKEND_URL || 'http://3.110.163.30:8000/api';
 
 const fetch = (...args) => 
     import('node-fetch').then(({default: fetch}) => fetch(...args));

@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!.'
+    return 'Hello, World. This message is from Akriti EC2 server!.'
 
 @app.route('/api', methods=['GET'])
 def api():

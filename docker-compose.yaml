@@ -1,8 +1,10 @@
-version: '1.0'
+version: '3.8'
 
 services:
   backend:
-    build: backend
+    build:
+      context: .
+      dockerfile: Dockerfile-backend
     hostname: backend-host
     volumes:
       - ./backend:/app
@@ -12,7 +14,9 @@ services:
       - ares-networks
 
   frontend:
-    build: frontend
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
     hostname: frontend-host
     volumes:
       - ./frontend:/app
@@ -20,7 +24,7 @@ services:
       # If your frontend uses 'node-fetch', it runs server-side and needs the internal hostname:
       - BACKEND_URL=http://backend-host:8000/api
     ports:
-      - "3000:3000" # Expose the Node.js server to localhost:3000
+      - "9000:9000" # Expose the Node.js server to localhost:3000
     links:
       - backend
     networks:

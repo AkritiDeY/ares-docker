@@ -30,5 +30,5 @@ app.get('/', async function (req, res) {
 });
 
 app.listen(3000, () => {
-    console.log(`Ares Frontend is successfully running on http://localhost:9000`);
+    console.log(`Ares Frontend is successfully running on http://localhost:3000`);
 });

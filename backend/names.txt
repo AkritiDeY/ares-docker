@@ -1,6 +1,6 @@
-Akriti
-Hill station
-Beach
+This is a frontend Server explicitly created for nodejs application.
+This call is from a different server hosting the express application.
+All
 Plateau
 Valley
 Fluffy
